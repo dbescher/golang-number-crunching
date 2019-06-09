@@ -83,37 +83,34 @@ func CAbs (a FComplex) float64{ // absolute value of complex
 	return c
 }
 
-/* func CSqrt (a FComplex) FComplex{ // principal square root of complex
+func CSqrt (a FComplex) FComplex { // principal square root of complex
 	var c FComplex
-	var x,y,w,r float64
-	if (a.real == 0.0){
+	var x, y, w, r float64
+	if (a.real == 0.0) {
 		c.real = 0.0
 		c.imaginary = 0.0
 		return c
-	}else{
+	} else {
 		x = math.Abs(a.real)
 		y = math.Abs(a.imaginary)
 		if (x >= y) {
 			r = y / x
-			w = math.Sqrt(x) * math.Sqrt(0.5 * (1.0+ math.Sqrt((1.0 + r * r))))
-			} else{
-				r = x / y
-				w = math.Sqrt(y) * math.Sqrt(0.5 * (r + math.Sqrt(1.0 + r * r)))
+			w = math.Sqrt(x) * math.Sqrt(0.5*(1.0+math.Sqrt((1.0 + r*r))))
+		} else {
+			r = x / y
+			w = math.Sqrt(y) * math.Sqrt(0.5*(r+math.Sqrt(1.0+r*r)))
 		}
 		if a.real >= 0.0 {
 			c.real = w
 			c.imaginary = a.imaginary / (2.0 * w)
-
-
-
-		{
-
+		} else {
+			if a.imaginary >= 0 {
+				c.imaginary = w
+			} else {
+				c.imaginary = -w
+			}
+			c.real = a.imaginary / (2.0 * c.imaginary)
 		}
-
+		return c
 	}
-}
-
-*/
-func main() {
-	
 }
