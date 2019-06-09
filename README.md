@@ -1,2 +1,2 @@
 # golang-number-crunching
-A collection of experimental numeric functions 
+Code for dual purpose tutorial - concurrently learn learn math and programming
